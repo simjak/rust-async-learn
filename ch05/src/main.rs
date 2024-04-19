@@ -1,5 +1,6 @@
 use core::arch::asm;
 
+
 const SSIZE: isize = 48;
 
 #[derive (Debug, Default)]
@@ -29,7 +30,13 @@ fn main() {
         let sb_aligned = (stack_bottom as usize & !15) as *mut u8;
         std::ptr::write(sb_aligned.offset(-16) as *mut u64, hello as u64);
         ctx.rsp = sb_aligned.offset(-16) as u64;
-        gt_switch(&mut ctx);
+        // gt_switch(&mut ctx);
+
+        for i in 0..SSIZE {
+            println!("mem: {}, val: {}, pointer {}", sb_aligned.offset(-i as isize) as usize, *sb_aligned.offset(-i as isize));
+
+        }
     }
+
 }
 
