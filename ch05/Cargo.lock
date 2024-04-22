@@ -3,9 +3,9 @@
 version = 3
 
 [[package]]
-name = "ch05"
+name = "C-fibers"
 version = "0.1.0"
 
 [[package]]
-name = "test_compl"
+name = "c-fibers"
 version = "0.1.0"
